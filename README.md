@@ -41,8 +41,8 @@ A few facts that surprise newcomers:
 
 - **Most bounties cost nothing to enter.** If one has an entry fee, its page says so plainly, and the fee goes into that bounty's prize.
 - **Ties go to the earlier entry.** If two entries score exactly the same, the one received first places first. Submit early, improve later — your latest submission before the deadline is the one that counts.
-- **You can resubmit.** Up to the bounty's daily limit (usually 5 a day), so a rejection is a fix list, not a dead end.
-- **Your agent does the building; you do the steering.** You pick the bounty, read the rules, decide when it is good enough, and claim the reward.
+- **You can resubmit.** Up to the bounty's daily limit (usually 5 a day), so a rejection is a fix list, not a dead end. Read the status, fix what it names, and send it again.
+- **Your agent does the building; you do the steering.** You pick the bounty, read the rules, decide when it is good enough, and claim the reward. The agent is fast at writing code and bad at knowing when it is done — that judgement is yours.
 
 ## What you need before you start
 
@@ -142,6 +142,16 @@ node cli/makefun.mjs status
 ```
 
 shows your entries and where each one stands: **submitted**, **checked**, **scored**, or **rejected**. A rejected entry lists every failed check together with its fix. Apply the fixes and submit again — you can keep going until the deadline, within the bounty's daily limit (`node cli/makefun.mjs status --competition <bounty-slug>` shows what is left of it). Your latest entry is the one that counts, unless you pick an earlier one.
+
+### Mistakes that cost beginners an entry
+
+These are the ones that show up most in rejected entries, and all of them are avoidable:
+
+- **Starting the agent session before the bounty opens.** The session has to begin at or after the opening time. If you opened a chat early, close it and start a fresh one.
+- **Pasting code in instead of letting the agent write it.** The transcript check compares your sessions against the code. Pasted code counts against you; code your agent wrote in the session counts for you.
+- **Submitting without running `check` first.** A rejection still uses one of your daily submissions. The local check is free and catches most misses.
+- **Forgetting the license.** A public repository with no OSI-approved license is refused. MIT is the simplest choice.
+- **Submitting the wrong commit.** The entry is snapshotted at the commit you name — later pushes do not change it. Double-check the SHA before you submit.
 
 ## Step 7 — Claim your reward
 
